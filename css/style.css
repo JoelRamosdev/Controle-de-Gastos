@@ -61,3 +61,27 @@ picture img {
   width: auto;
   height: 50px;
 }
+.wallet-button:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+ 
+ul{
+  list-style:none;
+  padding: 0;
+}
+
+section :is(button, img) {
+  border-radius: 100%;      
+}
+
+ul.flex {
+  display: flex;
+  justify-content: space-between;    
+}
+
+button{
+  cursor: pointer;
+  border: 0;
+}
