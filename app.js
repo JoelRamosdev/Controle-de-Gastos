@@ -39,3 +39,9 @@ onEvent("brinquedo","click", () => {
     extrato += "R$" + BRINQUEDO + " gastos com brinquedo \n"; 
     alteraCarteiraEalertaLimite();    
 });
+onEvent("circo","click", () => {
+    carteira -= CIRCO; 
+    alert("Você gastou R$" + CIRCO + " com circo!");    
+    extrato += "R$" + CIRCO + " gastos com circo \n"; 
+    alteraCarteiraEalertaLimite();
+});
