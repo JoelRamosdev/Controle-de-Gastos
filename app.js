@@ -45,3 +45,7 @@ onEvent("circo","click", () => {
     extrato += "R$" + CIRCO + " gastos com circo \n"; 
     alteraCarteiraEalertaLimite();
 });
+// quando clicar no botão EXTRATO ele vai abrir uma caixa de alerta listando os gastos e informando quando tem de saldo e qual o valor definido como economia.
+onEvent("go-extrato", "click", () => {    
+    alert(extrato + "\n" + "Seu saldo atual é de R$" + carteira + ".\n" + "Sua meta de gastos era de R$" + economia); 
+})
