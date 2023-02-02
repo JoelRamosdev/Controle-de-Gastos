@@ -49,3 +49,7 @@ onEvent("circo","click", () => {
 onEvent("go-extrato", "click", () => {    
     alert(extrato + "\n" + "Seu saldo atual é de R$" + carteira + ".\n" + "Sua meta de gastos era de R$" + economia); 
 })
+// criar a variavel que altera o background do BODY para vermelho
+const walletColorRed = () => {
+    document.querySelector("body").style.background= "linear-gradient(to left, #660000, #990000, #ff0000)";   
+ }
