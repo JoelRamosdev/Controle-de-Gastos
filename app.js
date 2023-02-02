@@ -33,4 +33,9 @@ onEvent("comida","click", () =>{
     extrato += "R$" + COMIDA + " gastos com comida \n"; // armazenar em extrato o que está sendo gasto
     alteraCarteiraEalertaLimite();
 });
-
+onEvent("brinquedo","click", () => {
+    carteira -= BRINQUEDO;
+    alert("Você gastou R$" + BRINQUEDO + " com brinquedo!");    
+    extrato += "R$" + BRINQUEDO + " gastos com brinquedo \n"; 
+    alteraCarteiraEalertaLimite();    
+});
