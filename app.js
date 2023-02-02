@@ -30,24 +30,24 @@ document.querySelector("#wallet").innerHTML = carteira;
 onEvent("comida","click", () =>{
     carteira -= COMIDA; // reduzir o valor que foi declarado na variável
     alert("Você gastou R$" + COMIDA + " com comida!"); // informar ao usuário que ouve uma transação
-    extrato += "R$" + COMIDA + " gastos com comida \n"; // armazenar em extrato o que está sendo gasto
+    extrato += "R$" + COMIDA + " Gastos com Comida \n"; // armazenar em extrato o que está sendo gasto
     alteraCarteiraEalertaLimite();
 });
 onEvent("brinquedo","click", () => {
     carteira -= BRINQUEDO;
     alert("Você gastou R$" + BRINQUEDO + " com brinquedo!");    
-    extrato += "R$" + BRINQUEDO + " gastos com brinquedo \n"; 
+    extrato += "R$" + BRINQUEDO + " Gastos com Brinquedo \n"; 
     alteraCarteiraEalertaLimite();    
 });
 onEvent("circo","click", () => {
     carteira -= CIRCO; 
     alert("Você gastou R$" + CIRCO + " com circo!");    
-    extrato += "R$" + CIRCO + " gastos com circo \n"; 
+    extrato += "R$" + CIRCO + " Gastos com Circo \n"; 
     alteraCarteiraEalertaLimite();
 });
 // quando clicar no botão EXTRATO ele vai abrir uma caixa de alerta listando os gastos e informando quando tem de saldo e qual o valor definido como economia.
 onEvent("go-extrato", "click", () => {    
-    alert(extrato + "\n" + "Seu saldo atual é de R$" + carteira + ".\n" + "Sua meta de gastos era de R$" + economia); 
+    alert(extrato + "\n" + "Seu saldo atual é de R$" + carteira + ".\n" + "Sua meta de Economia é de R$" + economia); 
 })
 // criar a variavel que altera o background do BODY para vermelho
 const walletColorRed = () => {
