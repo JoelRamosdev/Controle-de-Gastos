@@ -26,3 +26,11 @@ const BRINQUEDO = 13.00;
 // incluir o valor informado para gastos na carteira
 document.querySelector("#wallet").innerHTML = carteira;
 
+// cada vez que o botão for clicado ele deve: 
+onEvent("comida","click", () =>{
+    carteira -= COMIDA; // reduzir o valor que foi declarado na variável
+    alert("Você gastou R$" + COMIDA + " com comida!"); // informar ao usuário que ouve uma transação
+    extrato += "R$" + COMIDA + " gastos com comida \n"; // armazenar em extrato o que está sendo gasto
+    alteraCarteiraEalertaLimite();
+});
+
