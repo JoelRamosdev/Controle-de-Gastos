@@ -53,3 +53,10 @@ onEvent("go-extrato", "click", () => {
 const walletColorRed = () => {
     document.querySelector("body").style.background= "linear-gradient(to left, #660000, #990000, #ff0000)";   
  }
+ function alteraCarteiraEalertaLimite() {
+    document.querySelector("#wallet").innerHTML = carteira; // apresentar o valor restante em cateria deduzido do gasto
+    if (carteira <= economia) { // se o valor em carteira for inferior que a economia pretendida ele vai avisar com a msg e mudar o fundo da tela para vermelho
+        walletColorRed();
+        alert("ATENÇAO! Você atingiu seu limite de gastos");
+    }
+}
