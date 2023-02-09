@@ -2,7 +2,13 @@
 import {
     onEvent, 
     showElement, 
-    setScreen} from './lib/code.org.js';
+    setScreen} 
+    from './lib/code.org.js';
+
+    import {
+        imprimeExtrato
+    } 
+    from './gui.js';
 
 // definir abaixo quais as variáveis que serão usadas
 
@@ -66,32 +72,29 @@ const walletColorRed = () => {
     }
 }
 
-function detalhaExtrato(lista){ 
+function atualizaListaBrinquedo() {
+    let transaction = {
+        nome: "Brinquedo",
+        valor: 13.00,
+        data: new Date()
+    };
+    extractList.push(transaction);
+}
 
-    let output = detalhaExtrato(lista)
-    output = `NOME| VALOR| DATA|`
-    output +=`${item.nome} | ${item.valor} | 
-    ${item.data.toLocaleString().substr(0, 10)}`
-lista.forEach(function(lista) {       
-        console.log(output);
-        return output;
-    });
-} 
+function atualizaListaComida() {
+    let transaction = {
+        nome: "Comida",
+        valor: 18.00,
+        data: new Date()
+    };
+    extractList.push(transaction);
+}
 
-detalhaExtrato([
-{
-    nome: 'comida',
-    valor: 18.00,
-    data: new Date()
-},
-{
-    nome: 'brinquedo',
-    valor: 13.00,
-    data: new Date()
-},
-{
-    nome: 'circo',
-    valor: 15.00,
-    data: new Date()
-}  
-])
+function atualizaListaCirco() {
+    let transaction = {
+        nome: "Circo",
+        valor: 15.00,
+        data: new Date()
+    };
+    extractList.push(transaction);
+}
