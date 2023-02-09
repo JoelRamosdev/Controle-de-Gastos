@@ -6,7 +6,7 @@ import {
     from './lib/code.org.js';
 
     import {
-        imprimeExtrato
+    imprimeExtrato
     } 
     from './gui.js';
 
@@ -29,6 +29,9 @@ const COMIDA = 18.00;
 const CIRCO = 15.00; 
 const BRINQUEDO = 13.00; 
 
+// criar variavel de extrato que será alimentada conforme os gastos forem acontecendo
+let extractList = []
+
 // incluir o valor informado para gastos na carteira
 document.querySelector("#wallet").innerHTML = carteira;
 
@@ -37,15 +40,16 @@ onEvent("comida","click", () =>{
     carteira -= COMIDA; // reduzir o valor que foi declarado na variável
     alert("Você gastou R$" + COMIDA + " com comida!"); // informar ao usuário que ouve uma transação
     extrato += "R$" + COMIDA + " Gastos com Comida \n"; // armazenar em extrato o que está sendo gasto
-    alteraCarteiraEalertaLimite();   
-})    
+    alteraCarteiraEalertaLimite();  
+    atualizaListaComida(); 
+});    
 
 onEvent("brinquedo","click", () => {
     carteira -= BRINQUEDO;
     alert("Você gastou R$" + BRINQUEDO + " com brinquedo!");    
     extrato += "R$" + BRINQUEDO + " Gastos com Brinquedo \n"; 
     alteraCarteiraEalertaLimite();   
-    
+    atualizaListaBrinquedo();
 });
 
 onEvent("circo","click", () => {
@@ -53,26 +57,22 @@ onEvent("circo","click", () => {
     alert("Você gastou R$" + CIRCO + " com circo!");    
     extrato += "R$" + CIRCO + " Gastos com Circo \n"; 
     alteraCarteiraEalertaLimite();
-    
+    atualizaListaCirco();
 });
 
 // quando clicar no botão EXTRATO ele vai abrir uma caixa de alerta listando os gastos e informando quando tem de saldo e qual o valor definido como economia.
 onEvent("go-extrato", "click", () => {    
     alert(extrato + "\n" + "Seu saldo atual é de R$" + carteira + ".\n" + "Sua meta de Economia é de R$" + economia); 
+    let listHTML = imprimeExtrato(extractList);
+    setContent(listHTML, "lista-de-gastos");
 })
+
 // criar a variavel que altera o background do BODY para vermelho
 const walletColorRed = () => {
     document.querySelector("body").style.background= "linear-gradient(to left, #660000, #990000, #ff0000)";   
  }
- function alteraCarteiraEalertaLimite() {
-    document.querySelector("#wallet").innerHTML = carteira; // apresentar o valor restante em cateria deduzido do gasto
-    if (carteira <= economia) { // se o valor em carteira for inferior que a economia pretendida ele vai avisar com a msg e mudar o fundo da tela para vermelho
-        walletColorRed();
-        alert("ATENÇAO! Você atingiu seu limite de gastos");
-    }
-}
 
-function atualizaListaBrinquedo() {
+ function atualizaListaBrinquedo() {
     let transaction = {
         nome: "brinquedo",
         valor: 13.00,
@@ -98,3 +98,13 @@ function atualizaListaCirco() {
     };
     extractList.push(transaction);
 }
+
+ function alteraCarteiraEalertaLimite() {
+    document.querySelector("#wallet").innerHTML = carteira; // apresentar o valor restante em cateria deduzido do gasto
+    if (carteira <= economia) { // se o valor em carteira for inferior que a economia pretendida ele vai avisar com a msg e mudar o fundo da tela para vermelho
+        walletColorRed();
+        alert("ATENÇAO! Você atingiu seu limite de gastos");
+    }
+}
+
+

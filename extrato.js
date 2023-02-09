@@ -1,7 +1,7 @@
 const expenses = [
-    { value: 18.0, date: "2022-12-01", type: "comida" },
-    { value: 13.0, date: "2022-12-02", type: "brincadeira" },
-    { value: 15.0, date: "2022-12-03", type: "circo" }
+  { value: 50.0, date: "2022-12-01", type: "food" },
+  { value: 20.0, date: "2022-12-02", type: "transportation" },
+  { value: 10.0, date: "2022-12-03", type: "entertainment" }
   ];
   
   let totalExpenses = 0;
