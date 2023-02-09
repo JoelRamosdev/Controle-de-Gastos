@@ -31,20 +31,25 @@ onEvent("comida","click", () =>{
     carteira -= COMIDA; // reduzir o valor que foi declarado na variável
     alert("Você gastou R$" + COMIDA + " com comida!"); // informar ao usuário que ouve uma transação
     extrato += "R$" + COMIDA + " Gastos com Comida \n"; // armazenar em extrato o que está sendo gasto
-    alteraCarteiraEalertaLimite();
-});
+    alteraCarteiraEalertaLimite();   
+})    
+
 onEvent("brinquedo","click", () => {
     carteira -= BRINQUEDO;
     alert("Você gastou R$" + BRINQUEDO + " com brinquedo!");    
     extrato += "R$" + BRINQUEDO + " Gastos com Brinquedo \n"; 
-    alteraCarteiraEalertaLimite();    
+    alteraCarteiraEalertaLimite();   
+    
 });
+
 onEvent("circo","click", () => {
     carteira -= CIRCO; 
     alert("Você gastou R$" + CIRCO + " com circo!");    
     extrato += "R$" + CIRCO + " Gastos com Circo \n"; 
     alteraCarteiraEalertaLimite();
+    
 });
+
 // quando clicar no botão EXTRATO ele vai abrir uma caixa de alerta listando os gastos e informando quando tem de saldo e qual o valor definido como economia.
 onEvent("go-extrato", "click", () => {    
     alert(extrato + "\n" + "Seu saldo atual é de R$" + carteira + ".\n" + "Sua meta de Economia é de R$" + economia); 
@@ -60,3 +65,33 @@ const walletColorRed = () => {
         alert("ATENÇAO! Você atingiu seu limite de gastos");
     }
 }
+
+function detalhaExtrato(lista){ 
+
+    let output = detalhaExtrato(lista)
+    output = `NOME| VALOR| DATA|`
+    output +=`${item.nome} | ${item.valor} | 
+    ${item.data.toLocaleString().substr(0, 10)}`
+lista.forEach(function(lista) {       
+        console.log(output);
+        return output;
+    });
+} 
+
+detalhaExtrato([
+{
+    nome: 'comida',
+    valor: 18.00,
+    data: new Date()
+},
+{
+    nome: 'brinquedo',
+    valor: 13.00,
+    data: new Date()
+},
+{
+    nome: 'circo',
+    valor: 15.00,
+    data: new Date()
+}  
+])
