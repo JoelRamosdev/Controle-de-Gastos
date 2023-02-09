@@ -74,7 +74,7 @@ const walletColorRed = () => {
 
 function atualizaListaBrinquedo() {
     let transaction = {
-        nome: "Brinquedo",
+        nome: "brinquedo",
         valor: 13.00,
         data: new Date()
     };
@@ -83,7 +83,7 @@ function atualizaListaBrinquedo() {
 
 function atualizaListaComida() {
     let transaction = {
-        nome: "Comida",
+        nome: "comida",
         valor: 18.00,
         data: new Date()
     };
@@ -92,7 +92,7 @@ function atualizaListaComida() {
 
 function atualizaListaCirco() {
     let transaction = {
-        nome: "Circo",
+        nome: "circo",
         valor: 15.00,
         data: new Date()
     };
