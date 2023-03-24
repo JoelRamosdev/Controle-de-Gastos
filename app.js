@@ -28,8 +28,9 @@ document.querySelector("#wallet").innerHTML = carteira;
 // cada vez que o botão for clicado ele deve: 
 onEvent("comida","click", () =>{
     carteira -= COMIDA; // reduzir o valor que foi declarado na variável
+    let dataHora = new Date().toLocaleString(); // obter a data e hora atual
     alert("Você gastou R$" + COMIDA + " com comida!"); // informar ao usuário que ouve uma transação
-    extrato += "R$" + COMIDA + " Gastos com Comida \n"; // armazenar em extrato o que está sendo gasto
+    extrato += "- " + dataHora + " | R$" + COMIDA + " Gastos com Comida \n"; // armazenar em extrato o que está sendo gasto
     
     if (carteira <= economia) {
         walletColorRed();
@@ -40,8 +41,9 @@ onEvent("comida","click", () =>{
 
 onEvent("brinquedo","click", () => {
     carteira -= BRINQUEDO;
+    let dataHora = new Date().toLocaleString(); // obter a data e hora atual
     alert("Você gastou R$" + BRINQUEDO + " com brinquedo!");    
-    extrato += "R$" + BRINQUEDO + " Gastos com Brinquedo \n"; 
+    extrato += "- " + dataHora + " | R$" + BRINQUEDO + " Gastos com Brinquedo \n"; 
     
     if (carteira <= economia) {
         walletColorRed();
@@ -51,9 +53,10 @@ onEvent("brinquedo","click", () => {
 });
 
 onEvent("circo","click", () => {
-    carteira -= CIRCO; 
+    carteira -= CIRCO;
+    let dataHora = new Date().toLocaleString(); // obter a data e hora atual 
     alert("Você gastou R$" + CIRCO + " com circo!");    
-    extrato += "R$" + CIRCO + " Gastos com Circo \n"; 
+    extrato += "- " + dataHora + " | R$" + CIRCO + " Gastos com Circo \n"; 
     
     if (carteira <= economia) {
         walletColorRed();
