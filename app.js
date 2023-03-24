@@ -26,43 +26,55 @@ const BRINQUEDO = 13.00;
 document.querySelector("#wallet").innerHTML = carteira;
 
 // cada vez que o botão for clicado ele deve: 
-onEvent("comida","click", () =>{
+onEvent("comida","click", () =>{    
+    if (carteira - COMIDA < economia) {
+        alert("VALOR NÃO LIBERADO, POIS ULTRAPASSA SUUA META DE ECONOMIA.");
+        return;      
+      }
     carteira -= COMIDA; // reduzir o valor que foi declarado na variável
     let dataHora = new Date().toLocaleString(); // obter a data e hora atual
-    alert("Você gastou R$" + COMIDA + " com comida!"); // informar ao usuário que ouve uma transação
     extrato += "- " + dataHora + " | R$" + COMIDA + " Gastos com Comida \n"; // armazenar em extrato o que está sendo gasto
     
     if (carteira <= economia) {
         walletColorRed();
         alert("ATENÇÃO! Você atingiu seu limite de gastos.");
         return;
-      }
+    }
+    
 });    
 
 onEvent("brinquedo","click", () => {
+    if (carteira - BRINQUEDO < economia) {
+        alert("VALOR NÃO LIBERADO, POIS ULTRAPASSA SUUA META DE ECONOMIA.");
+        return;      
+      }
     carteira -= BRINQUEDO;
-    let dataHora = new Date().toLocaleString(); // obter a data e hora atual
-    alert("Você gastou R$" + BRINQUEDO + " com brinquedo!");    
+    let dataHora = new Date().toLocaleString(); // obter a data e hora atual      
     extrato += "- " + dataHora + " | R$" + BRINQUEDO + " Gastos com Brinquedo \n"; 
     
     if (carteira <= economia) {
         walletColorRed();
         alert("ATENÇÃO! Você atingiu seu limite de gastos.");
         return;
-      }
+    }
+    
 });
 
 onEvent("circo","click", () => {
+    if (carteira - BRINQUEDO < economia) {
+        alert("VALOR NÃO LIBERADO, POIS ULTRAPASSA SUUA META DE ECONOMIA.");
+        return;      
+      }
     carteira -= CIRCO;
-    let dataHora = new Date().toLocaleString(); // obter a data e hora atual 
-    alert("Você gastou R$" + CIRCO + " com circo!");    
+    let dataHora = new Date().toLocaleString(); // obter a data e hora atual      
     extrato += "- " + dataHora + " | R$" + CIRCO + " Gastos com Circo \n"; 
     
     if (carteira <= economia) {
         walletColorRed();
         alert("ATENÇÃO! Você atingiu seu limite de gastos.");
         return;
-      }
+    }
+    
 });
 
 // quando clicar no botão EXTRATO ele vai abrir uma caixa de alerta listando os gastos e informando quando tem de saldo e qual o valor definido como economia.
