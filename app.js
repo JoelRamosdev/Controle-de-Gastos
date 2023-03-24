@@ -31,6 +31,11 @@ onEvent("comida","click", () =>{
     alert("Você gastou R$" + COMIDA + " com comida!"); // informar ao usuário que ouve uma transação
     extrato += "R$" + COMIDA + " Gastos com Comida \n"; // armazenar em extrato o que está sendo gasto
     
+    if (carteira <= economia) {
+        walletColorRed();
+        alert("ATENÇÃO! Você atingiu seu limite de gastos.");
+        return;
+      }
 });    
 
 onEvent("brinquedo","click", () => {
@@ -38,6 +43,11 @@ onEvent("brinquedo","click", () => {
     alert("Você gastou R$" + BRINQUEDO + " com brinquedo!");    
     extrato += "R$" + BRINQUEDO + " Gastos com Brinquedo \n"; 
     
+    if (carteira <= economia) {
+        walletColorRed();
+        alert("ATENÇÃO! Você atingiu seu limite de gastos.");
+        return;
+      }
 });
 
 onEvent("circo","click", () => {
@@ -45,6 +55,11 @@ onEvent("circo","click", () => {
     alert("Você gastou R$" + CIRCO + " com circo!");    
     extrato += "R$" + CIRCO + " Gastos com Circo \n"; 
     
+    if (carteira <= economia) {
+        walletColorRed();
+        alert("ATENÇÃO! Você atingiu seu limite de gastos.");
+        return;
+      }
 });
 
 // quando clicar no botão EXTRATO ele vai abrir uma caixa de alerta listando os gastos e informando quando tem de saldo e qual o valor definido como economia.
